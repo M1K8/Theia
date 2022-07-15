@@ -12,4 +12,4 @@ Flow:
 
 
 #### Example
-[Here](https://github.com/M1K8/Theia/blob/cmd/example/main.go)
+[Here](https://github.com/M1K8/Theia/blob/main/cmd/example/main.go)
