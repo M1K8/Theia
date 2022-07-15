@@ -96,7 +96,7 @@ func (t *Theia) SendComplex(msg *discordgo.MessageSend, editMessage func(string,
 				continue
 			}
 		}
-		ref, err := t.s.ChannelMessageSendComplex(v.ChannelID, msg)
+		ref, err := t.s.ChannelMessageSendComplex(v.ChannelID, srvrMsg)
 
 		if err != nil {
 			log.Println("Failed to send message to " + v.GuildID + ":" + v.ChannelID + " - " + err.Error())
