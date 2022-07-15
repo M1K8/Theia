@@ -1,0 +1,8 @@
+vendor/
+*.exe
+main
+log
+cmd/theia/config.json
+config.json
+docker-compose.yml
+Dockerfile
