@@ -13,11 +13,6 @@ import (
 	"github.com/m1k8/theia/pkg/theia"
 )
 
-type config struct {
-	IAPI string `json:"IAPI"`
-	DAPI string `json:"DAPI"`
-}
-
 var token string
 var s *discordgo.Session
 
