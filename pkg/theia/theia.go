@@ -2,6 +2,7 @@ package theia
 
 import (
 	"log"
+	"sync"
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/m1k8/theia/pkg/repo"
@@ -12,8 +13,14 @@ type Theia struct {
 	s    *discordgo.Session
 }
 
-func NewTheia(session *discordgo.Session, r repo.Repo) *Theia {
-	return &Theia{s: session, repo: r}
+var once sync.Once = sync.Once{}
+var singleton *Theia
+
+func GetTheia(session *discordgo.Session, r repo.Repo) *Theia {
+	once.Do(func() {
+		singleton = &Theia{s: session, repo: r}
+	})
+	return singleton
 }
 
 func (t *Theia) Send(msg string, editMessage func(string, string) string) (map[string]*discordgo.MessageReference, error) {
