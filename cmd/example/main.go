@@ -91,7 +91,7 @@ func main() {
 		return
 	}
 
-	t := theia.NewTheia(s, &DummyRepo{})
+	t := theia.GetTheia(s, &DummyRepo{})
 
 	cmdList, cmdDefs := t.Inject("theia-example", commandDefs, commandHandlers)
 
